@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Location.Controllers.ClientController">
+   <children>
+      <VBox alignment="CENTER" spacing="20.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="255.0" prefWidth="1204.0" spacing="50.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="255.0" prefWidth="284.0" spacing="15.0">
+                     <children>
+                        <Label text="Nom et prenom">
+                           <font>
+                              <Font name="MyriadPro-Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="name" prefHeight="30.0" prefWidth="281.0" promptText="Nom et prenom" style="-fx-background-radius: 10;">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label text="Numero de telephone">
+                           <font>
+                              <Font name="MyriadPro-Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <AnchorPane prefHeight="22.0" prefWidth="222.0">
+                           <children>
+                              <TextField fx:id="phone" layoutX="43.0" prefHeight="30.0" prefWidth="241.0" promptText="Numero de telephone" style="-fx-background-radius: 0 10 10 0;">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField alignment="CENTER" disable="true" editable="false" layoutX="-4.0" prefHeight="30.0" prefWidth="48.0" style="-fx-background-radius: 10 0 0 10;" text="+212">
+                                 <font>
+                                    <Font name="MyriadPro-Semibold" size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </AnchorPane>
+                        <Label text="Adresse">
+                           <font>
+                              <Font name="MyriadPro-Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="adress" minHeight="-Infinity" minWidth="-Infinity" prefHeight="52.0" prefWidth="284.0" promptText="Rue, numéro de rue, apt, suite,etc                           Pays, region, ville, code postal">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextArea>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="255.0" prefWidth="342.0" spacing="15.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="281.0">
+                           <children>
+                              <Label text="Image de permis">
+                                 <font>
+                                    <Font name="MyriadPro-Bold" size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="30.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Button fx:id="btnClear" mnemonicParsing="false" onAction="#btnAction" prefHeight="33.0" prefWidth="74.0" text="Clear">
+                                 <font>
+                                    <Font name="MyriadPro-Regular" size="13.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnImage" mnemonicParsing="false" onAction="#btnAction" prefHeight="33.0" prefWidth="74.0" text="Parcourir">
+                                 <font>
+                                    <Font name="MyriadPro-Regular" size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <ImageView fx:id="image" fitHeight="180.0" fitWidth="341.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin></ImageView>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="132.0" prefWidth="100.0" spacing="15.0">
+                     <children>
+                        <Button fx:id="btnInsert" mnemonicParsing="false" onAction="#btnAction" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #50C878;" text="Ajouter" textFill="WHITE" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font name="MyriadPro-Bold" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="btnUpdate" disable="true" mnemonicParsing="false" onAction="#btnAction" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #FF8300;" text="Modifier" textFill="WHITE">
+                           <font>
+                              <Font name="MyriadPro-Bold" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="btnDelete" disable="true" mnemonicParsing="false" onAction="#btnAction" prefWidth="100.0" style="-fx-background-color: #DF362D;" text="Supprimer" textFill="WHITE">
+                           <font>
+                              <Font name="MyriadPro-Bold" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Separator />
+            <HBox>
+               <children>
+                  <Label fx:id="errorlog" alignment="CENTER" contentDisplay="CENTER" styleClass="errorlog" textFill="#ae0000">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="110.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <TextField fx:id="search" alignment="CENTER" onKeyReleased="#searchClient" prefHeight="30.0" prefWidth="598.0" promptText="Recherche" style="-fx-background-radius: 10;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="300.0" right="300.0" />
+               </VBox.margin>
+            </TextField>
+            <TableView fx:id="clientTable" onMouseClicked="#onTableClick" prefHeight="529.0" prefWidth="1004.0">
+               <columns>
+                  <TableColumn fx:id="colId" editable="false" prefWidth="150.0" text="Code Client" />
+                  <TableColumn fx:id="colName" editable="false" prefWidth="150.0" text="Nom Complet" />
+                  <TableColumn fx:id="colNum" editable="false" prefWidth="150.0" text="Numero" />
+                  <TableColumn fx:id="colAdress" editable="false" prefWidth="294.0" text="Adresse" />
+                  <TableColumn fx:id="colPermis" prefWidth="75.0" text="Permis" visible="false" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <VBox.margin>
+                  <Insets left="100.0" right="100.0" />
+               </VBox.margin>
+            </TableView>
+         </children>
+         <HBox.margin>
+            <Insets bottom="15.0" top="15.0" />
+         </HBox.margin>
+      </VBox>
+   </children>
+</HBox>

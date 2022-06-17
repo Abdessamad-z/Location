@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="423.0" prefWidth="952.0" stylesheets="@../CSS/panes.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Location.Controllers.LoginController">
+   <right>
+      <AnchorPane id="loginPane" prefHeight="423.0" prefWidth="298.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="81.0" fitWidth="168.0" layoutX="73.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@../images/car-logo-png-vector-1-Images-Free-Transparent.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="83.0" layoutY="170.0" text="Nom d'utilisateur" textFill="WHITE">
+               <font>
+                  <Font name="MyriadPro-Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="82.0" layoutY="231.0" text="Mot de passe" textFill="WHITE">
+               <font>
+                  <Font name="MyriadPro-Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="username" layoutX="82.0" layoutY="187.0" promptText="Nom d'utilisateur" />
+            <PasswordField fx:id="password" layoutX="82.0" layoutY="248.0" onAction="#onLoginClick" promptText="Mot de passe" />
+            <Button fx:id="login" layoutX="130.0" layoutY="317.0" mnemonicParsing="false" onAction="#onLoginClick" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semibold" size="12.0" />
+               </font>
+            </Button>
+            <Label fx:id="errorlog" alignment="CENTER" contentDisplay="CENTER" layoutX="48.0" layoutY="144.0" styleClass="errorlog" textFill="#ae0000">
+               <font>
+                  <Font name="Segoe UI Semibold" size="8.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </right>
+   <center>
+      <AnchorPane prefHeight="423.0" prefWidth="659.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="423.0" fitWidth="666.0" layoutX="-7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Classic-Car-Collecting-03.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

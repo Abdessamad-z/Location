@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1200.0" stylesheets="@../CSS/panes.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Location.Controllers.IndexController">
+   <left>
+      <VBox prefHeight="677.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#onClientClick" prefHeight="500.0" prefWidth="300.0" text="Gestion des clients " />
+            <Button maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#onReservationClick" prefHeight="500.0" prefWidth="400.0" text="Gestion des réservations " />
+            <Button maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#onContratClick" prefHeight="500.0" prefWidth="400.0" text="Gestion des contrats de location" />
+            <Button maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#onFactureClick" prefHeight="500.0" prefWidth="382.0" text="Gestion des factures" />
+            <Button maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSanctionClick" prefHeight="500.0" prefWidth="382.0" text="Gestion des sanctions" />
+            <Button maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#onVehiculeClick" prefHeight="500.0" prefWidth="400.0" text="Gestion des véhicule" />
+            <Button maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#onParkingClick" prefHeight="500.0" prefWidth="400.0" text="Gestion des parkings" />
+            <Button fx:id="admin" disable="true" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAdminClick" prefHeight="500.0" prefWidth="400.0" text="Admin" />
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <HBox alignment="CENTER_RIGHT" prefHeight="127.0" prefWidth="0.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="127.0" prefWidth="9000.0" styleClass="header">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="255.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/car-logo-png-vector-1-Images-Free-Transparent.png" />
+                     </image>
+                  </ImageView>
+                  <Label onMouseClicked="#homeClick" text="Location Al Riad" textFill="#393939" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="Verdana Bold" size="64.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+            </HBox>
+            <AnchorPane minHeight="-Infinity" minWidth="220.0" prefHeight="127.0" prefWidth="130.0" styleClass="header">
+               <children>
+                  <Button layoutX="129.0" layoutY="51.0" mnemonicParsing="false" onMouseClicked="#disconnect" text="disconnect" />
+                  <ToggleButton layoutX="14.0" layoutY="51.0" mnemonicParsing="false" onMouseClicked="#darkMode" prefHeight="25.0" prefWidth="96.0" text="Dark / Light" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <HBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/JavaFxLogo.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </ImageView>
+               </children>
+               <HBox.margin>
+                  <Insets left="15.0" right="15.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox alignment="CENTER" spacing="60.0">
+               <children>
+                  <HBox alignment="CENTER" spacing="200.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/EnsaLogo.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/MysqlLogo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" spacing="20.0">
+                     <children>
+                        <TextFlow id="textZone" fx:id="flow" style="-fx-background-color: #cedbd0;" textAlignment="CENTER">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <padding>
+                              <Insets bottom="10.0" left="50.0" right="50.0" top="10.0" />
+                           </padding>
+                        </TextFlow>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" spacing="200.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/JdbcLogo.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/IntellijLogo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" spacing="100.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/JavaLogo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <HBox.margin>
+                  <Insets left="15.0" right="15.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>

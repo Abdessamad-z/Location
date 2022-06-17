@@ -1,0 +1,64 @@
+@font-face {
+    src: url('../font/KdamThmorPro-Regular.ttf');
+}
+
+Pane,
+AnchorPane,
+BorderPane,
+DialogPane,
+FlowPane,
+GridPane,
+HBox,
+StackPane,
+TextFlow,
+TilePane,
+VBox {
+    -fx-background-color: #a0b0a2;
+}
+
+#textZone{
+    -fx-text-alignment: center;
+    -fx-background-radius: 200;
+    -fx-font-size: 14;
+}
+.button, .toggle-button{
+    -fx-background-color: #3b453c;
+    -fx-font-weight: bold;
+}
+
+.header{
+    -fx-background-color: #222923;
+}
+#loginPane{
+    -fx-background-color: #222923;
+}
+
+Text{
+    -fx-font-family: "Kdam Thmor Pro Regular";
+}
+
+.button:disabled, .button:default:disabled, .toggle-button:disabled, .button, .label, .toggle-button
+{
+    -fx-text-fill: white;
+}
+.tool-bar .toggle-button:selected {
+    -fx-background-color: white;
+    -fx-text-fill: text_color;
+}
+
+.tool-bar .toggle-button:selected:hover {
+    -fx-background-color: derive(white, 40%);
+}
+
+.tool-bar .toggle-button:selected:pressed {
+    -fx-background-color: derive(white, -40%);
+}
+.choice-box > .label {
+    -fx-text-fill: text_color;
+}
+
+.errorlog{
+    -fx-text-fill: #CC0000;
+}
+
+

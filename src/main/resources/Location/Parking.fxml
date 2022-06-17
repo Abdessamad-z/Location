@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Location.Controllers.ParkingController">
+   <children>
+      <VBox alignment="CENTER" spacing="10.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="224.0" prefWidth="1011.0" spacing="50.0">
+               <children>
+                  <VBox fx:id="formular" prefHeight="149.0" prefWidth="283.0" spacing="5.0">
+                     <children>
+                        <Label text="Capacité">
+                           <font>
+                              <Font name="MyriadPro-Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="capacity" prefHeight="30.0" prefWidth="281.0" promptText="Capacité" style="-fx-background-radius: 10;">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label text="Rue">
+                           <font>
+                              <Font name="MyriadPro-Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="rue" prefHeight="30.0" prefWidth="241.0" promptText="Rue" style="-fx-background-radius: 10;">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label text="Arrondissement">
+                           <font>
+                              <Font name="MyriadPro-Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="arrondi" prefHeight="30.0" prefWidth="241.0" promptText="Arrondissement" style="-fx-background-radius: 10;">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <HBox prefHeight="30.0" prefWidth="324.0" spacing="5.0">
+                           <children>
+                              <Button fx:id="btnInsert" mnemonicParsing="false" onAction="#btnAction" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #50C878;" text="Ajouter" textFill="WHITE">
+                                 <font>
+                                    <Font name="MyriadPro-Bold" size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="btnUpdate" disable="true" mnemonicParsing="false" onAction="#btnAction" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #FF8300;" text="Modifier" textFill="WHITE">
+                                 <font>
+                                    <Font name="MyriadPro-Bold" size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="btnDelete" disable="true" mnemonicParsing="false" onAction="#btnAction" prefWidth="100.0" style="-fx-background-color: #DF362D;" text="Supprimer" textFill="WHITE">
+                                 <font>
+                                    <Font name="MyriadPro-Bold" size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <TableView fx:id="parckingTable" onMouseClicked="#onTableClick" prefHeight="200.0" prefWidth="405.0">
+                    <columns>
+                      <TableColumn fx:id="colId" prefWidth="75.0" text="Numero Parking" />
+                      <TableColumn fx:id="colCap" prefWidth="75.0" text="Capacité" />
+                        <TableColumn fx:id="colRue" prefWidth="75.0" text="Rue" />
+                        <TableColumn fx:id="colArrondi" prefWidth="75.0" text="Arrondissment" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <VBox alignment="CENTER" prefHeight="135.0" prefWidth="171.0" spacing="20.0">
+                     <children>
+                        <TextField fx:id="search" alignment="CENTER" onKeyReleased="#searchParking" prefHeight="30.0" prefWidth="400.0" promptText="Recherche" style="-fx-background-radius: 10;">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="btnInsertV" disable="true" mnemonicParsing="false" onAction="#btnAction" prefHeight="28.0" prefWidth="400.0" style="-fx-background-color: #50C878;" text="Deposer un vehicule" textFill="WHITE">
+                           <font>
+                              <Font name="MyriadPro-Bold" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="btnRevokeV" disable="true" mnemonicParsing="false" onAction="#btnAction" prefHeight="28.0" prefWidth="400.0" style="-fx-background-color: #FF8300;" text="Sortir le vehicule" textFill="WHITE">
+                           <font>
+                              <Font name="MyriadPro-Bold" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="retour" disable="true" mnemonicParsing="false" onAction="#btnAction" prefHeight="28.0" prefWidth="400.0" style="-fx-background-color: black;" text="Retour" textFill="WHITE">
+                           <font>
+                              <Font name="MyriadPro-Bold" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label fx:id="errorlog" alignment="CENTER" contentDisplay="CENTER" styleClass="errorlog" textFill="#ae0000">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="110.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <Label fx:id="instructions" alignment="CENTER" prefHeight="17.0" prefWidth="365.0" textFill="#145e01">
+               <VBox.margin>
+                  <Insets right="650.0" />
+               </VBox.margin>
+            </Label>
+            <TableView fx:id="vehiculeTable" onMouseClicked="#onVehiculeTableClick" prefHeight="529.0" prefWidth="1040.0">
+               <columns>
+                  <TableColumn fx:id="matricule" editable="false" prefWidth="150.0" text="Immatruculation" />
+                  <TableColumn fx:id="marque" editable="false" prefWidth="150.0" text="Marque" />
+                  <TableColumn fx:id="type" editable="false" prefWidth="150.0" text="Type" />
+                  <TableColumn fx:id="carbu" editable="false" prefWidth="294.0" text="Carburant" />
+                  <TableColumn fx:id="km" prefWidth="75.0" text="Kilometrage" />
+                  <TableColumn fx:id="circu" prefWidth="75.0" text="Mise en circulation" />
+                  <TableColumn fx:id="dispo" prefWidth="75.0" text="Disponibilité" />
+                  <TableColumn fx:id="codePark" prefWidth="75.0" text="Parking" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <VBox.margin>
+                  <Insets left="100.0" right="100.0" />
+               </VBox.margin>
+            </TableView>
+         </children>
+         <HBox.margin>
+            <Insets bottom="15.0" top="15.0" />
+         </HBox.margin>
+      </VBox>
+   </children>
+</HBox>

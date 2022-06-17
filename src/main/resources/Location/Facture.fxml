@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Location.Controllers.FactureController">
+   <children>
+      <VBox alignment="CENTER" spacing="20.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="121.0" prefWidth="1271.0" spacing="50.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="113.0" prefWidth="270.0" spacing="5.0">
+                     <children>
+                        <Label text="Montant">
+                           <font>
+                              <Font name="MyriadPro-Bold" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="montant" prefHeight="30.0" prefWidth="200.0" promptText="Montant" style="-fx-background-radius: 10;" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="149.0" prefWidth="270.0" spacing="5.0">
+                     <children>
+                        <Label text="Contrat">
+                           <font>
+                              <Font name="MyriadPro-Bold" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <HBox prefHeight="30.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="contrat" editable="false" prefHeight="30.0" prefWidth="200.0" promptText="Selectionner une reservation" style="-fx-background-radius: 10 0 0 10;" />
+                              <Button fx:id="btnContrat" minHeight="30.0" mnemonicParsing="false" onAction="#btnAction" prefWidth="100.0" style="-fx-background-radius: 0 10 10 0;" text="Parcourir" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="191.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Button fx:id="btnInsert" mnemonicParsing="false" onAction="#btnAction" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #50C878;" text="Ajouter" textFill="WHITE" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font name="MyriadPro-Bold" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="btnUpdate" disable="true" mnemonicParsing="false" onAction="#btnAction" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #FF8300;" text="Modifier" textFill="WHITE">
+                           <font>
+                              <Font name="MyriadPro-Bold" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="btnDelete" disable="true" mnemonicParsing="false" onAction="#btnAction" prefWidth="100.0" style="-fx-background-color: #DF362D;" text="Supprimer" textFill="WHITE">
+                           <font>
+                              <Font name="MyriadPro-Bold" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox>
+               <children>
+                  <Label fx:id="errorlog" alignment="CENTER" contentDisplay="CENTER" styleClass="errorlog" textFill="#ae0000">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="110.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <TextField fx:id="search" alignment="CENTER" onKeyReleased="#searchFacture" prefHeight="30.0" prefWidth="598.0" promptText="Recherche" style="-fx-background-radius: 10;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="230.0" right="230.0" />
+               </VBox.margin>
+            </TextField>
+            <TableView fx:id="factureTable" fixedCellSize="0.0" onMouseClicked="#onTableClick" prefHeight="529.0" prefWidth="1004.0">
+               <columns>
+                  <TableColumn fx:id="colId" editable="false" prefWidth="143.0" text="Code facture" />
+                  <TableColumn fx:id="colDateFacture" editable="false" prefWidth="143.0" text="Date facture" />
+                  <TableColumn fx:id="colMontant" editable="false" prefWidth="143.0" text="Montant" />
+                  <TableColumn fx:id="colContrat" prefWidth="143.0" text="Code contrat" />
+               </columns>
+               <VBox.margin>
+                  <Insets left="100.0" right="100.0" />
+               </VBox.margin>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+         <HBox.margin>
+            <Insets bottom="15.0" top="15.0" />
+         </HBox.margin>
+      </VBox>
+   </children>
+</HBox>
